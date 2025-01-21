@@ -6,7 +6,7 @@
 /*   By: dangtran <dangtran@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/20 20:44:05 by dangtran          #+#    #+#             */
-/*   Updated: 2025/01/17 19:29:47 by dangtran         ###   ########.fr       */
+/*   Updated: 2025/01/21 17:03:09 by dangtran         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,9 +52,9 @@ typedef struct s_game
 
 int			exit_game(t_game *game);
 int			read_map(t_game *game, char **argv);
-void		adding_in_graphics(t_game *game);
-void		display_player(t_game *game, int height, int width);
-void		display_collectable(t_game *game, int height, int width);
+void		display_graphics(t_game *game);
+void		load_player(t_game *game, int height, int width);
+void		load_collectable(t_game *game, int height, int width);
 void		display_images_in_game(t_game *game);
 void		check_character(t_game *game);
 void		check_map(t_game *game, int height, int width);

@@ -6,13 +6,13 @@
 /*   By: dangtran <dangtran@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/28 19:00:52 by dangtran          #+#    #+#             */
-/*   Updated: 2025/01/21 14:04:25 by dangtran         ###   ########.fr       */
+/*   Updated: 2025/01/21 16:59:12 by dangtran         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/so_long.h"
 
-static int	map_width(char *str)
+static int	map_width(char *str, t_game *game)
 {
 	int	i;
 
@@ -21,10 +21,10 @@ static int	map_width(char *str)
 		i++;
 	if (str[i - 1] == '\n')
 		i--;
-	if (i >= 300)
+	if (i >= 50)
 	{
 		ft_printf("Error\nMap is too wide\n");
-		exit(0);
+		exit_game(game);
 	}
 	return (i);
 }
@@ -66,7 +66,7 @@ void	is_rectangular(t_game *game, int x)
 	}
 	while (i < game->height)
 	{
-		if (map_width(game->map[i]) != x)
+		if (map_width(game->map[i], game) != x)
 		{
 			ft_printf("Error\nMap is not rectangular\n");
 			exit_game(game);
@@ -122,8 +122,8 @@ int	read_map(t_game *game, char **argv)
 	close(game->fd);
 	if (!game->map)
 		return (0);
-	is_rectangular(game, map_width(game->map[0]));
-	game->width = map_width(game->map[0]);
+	is_rectangular(game, map_width(game->map[0], game));
+	game->width = map_width(game->map[0], game);
 	find_player_position(game);
 	return (1);
 }

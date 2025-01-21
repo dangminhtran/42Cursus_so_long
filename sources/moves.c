@@ -6,7 +6,7 @@
 /*   By: dangtran <dangtran@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/08 10:18:10 by dangtran          #+#    #+#             */
-/*   Updated: 2025/01/17 19:43:42 by dangtran         ###   ########.fr       */
+/*   Updated: 2025/01/21 16:24:20 by dangtran         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,6 +76,7 @@ int	controls_working(int command, t_game *game)
 {
 	int	works;
 
+	works = 0;
 	if (command == 119)
 		works = keyboard_up_down(game, -1);
 	if (command == 115)
@@ -87,6 +88,6 @@ int	controls_working(int command, t_game *game)
 	if (command == 65307)
 		exit_game(game);
 	if (works)
-		adding_in_graphics(game);
+		display_graphics(game);
 	return (1);
 }
