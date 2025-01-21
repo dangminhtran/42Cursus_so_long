@@ -6,7 +6,7 @@
 /*   By: dangtran <dangtran@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/15 20:31:16 by dangtran          #+#    #+#             */
-/*   Updated: 2025/01/21 14:23:54 by dangtran         ###   ########.fr       */
+/*   Updated: 2025/01/21 17:10:05 by dangtran         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,7 +51,7 @@ void	check_map(t_game *game, int height, int width)
 		&& game->map[height][width] != 'C' && game->map[height][width] != 'E'
 		&& game->map[height][width] != 'P' && game->map[height][width] != '\n')
 	{
-		ft_printf("Error\n Bad writting here : %c\n", game->map[height][width]);
+		ft_printf("Error\nBad input here : %c\n", game->map[height][width]);
 		exit_game(game);
 	}
 	if (game->map[height][width] == 'C')
